@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import * as dotenv from "dotenv";
+import { KnownDevices } from "puppeteer";
 
 dotenv.config();
 
@@ -71,7 +72,7 @@ async function scrapeQuotes(speed = 200) {
 }
 
 async function emulateIphone12(speed = 200) {
-    // Emula un dispositivo móvil (iPhone 12) y realiza una búsqueda en Google.
+    // Emula un dispositivo móvil (iPhone 12) y realiza una captura de pantalla.
 
     const browser = await puppeteer.launch({
         headless: false,
@@ -81,14 +82,10 @@ async function emulateIphone12(speed = 200) {
     const page = await browser.newPage();
 
     // Emulamos un dispositivo móvil
-    const iPhone12 = puppeteer.devices["iPhone 12"];
+    const iPhone12 = KnownDevices["iPhone 12"];
     await page.emulate(iPhone12);
 
-    await page.goto("https://google.com");
-    await page.type("input[name=q]", "puppeteer", { delay: 100 });
-    await page.keyboard.press("Enter");
-
-    await page.waitForNavigation({ waitUntil: "networkidle0" });
+    await page.goto("https://example.com");
 
     await page.screenshot({ path: "iphone12.png" });
 
