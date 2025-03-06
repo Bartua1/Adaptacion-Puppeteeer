@@ -1,0 +1,7 @@
+# Dependencias
+/node_modules
+
+# local env files
+# No hacer commit de estos archivos
+.env
+.env*.local
