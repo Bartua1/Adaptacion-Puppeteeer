@@ -195,18 +195,27 @@ async function logInToBartuChat(speed = 200, prompt="") {
     }
 }
 
-// Abrir una página web
-//openWebPage(200);
+// Obtener el argumento de la línea de comandos
+const argument = process.argv[2];
 
-// Capturar una captura de pantalla
-//captureScreenshot(200, "example.png");
-
-// Extraer citas de una página web
-//scrapeQuotes(200);
-
-// Emular un dispositivo móvil
-//emulateIphone12(200);
-
-// Extraer respuesta Chatbot
-const prompt = "If its midnight and raining in Madrid, can it be sunny in Barcelona?";
-logInToBartuChat(50, prompt);
+// Ejecutar una función basada en el argumento
+switch (argument) {
+    case "openWebPage":
+        openWebPage(200);
+        break;
+    case "captureScreenshot":
+        captureScreenshot(200, "example.png");
+        break;
+    case "scrapeQuotes":
+        scrapeQuotes(200);
+        break;
+    case "emulateIphone12":
+        emulateIphone12(200);
+        break;
+    case "logInToBartuChat":
+        const prompt = "If its midnight and raining in Madrid, can it be sunny in Barcelona?";
+        logInToBartuChat(50, prompt);
+        break;
+    default:
+        console.log("Uso: node index.js [openWebPage|captureScreenshot|scrapeQuotes|emulateIphone12|logInToBartuChat]");
+}

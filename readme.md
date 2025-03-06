@@ -42,31 +42,31 @@ Para utilizar este proyecto, simplemente clone el repositorio y siga las instruc
     *   Para abrir una página web:
 
         ```bash
-        node index.js
+        node index.js openWebPage
         ```
 
     *   Para capturar una captura de pantalla:
 
         ```bash
-        node index.js
+        node index.js captureScreenshot
         ```
 
     *   Para extraer citas de una página web:
 
         ```bash
-        node index.js
+        node index.js scrapeQuotes
         ```
 
     *   Para emular un dispositivo móvil:
 
         ```bash
-        node index.js
+        node index.js emulateIphone12
         ```
 
     *   Para interactuar con Bartu Chat:
 
         ```bash
-        node index.js
+        node index.js logInToBartuChat
         ```
 
 5.  Asegúrate de incluir un archivo `.gitignore` en tu proyecto antes de hacer un fork o clonar el repositorio. Este archivo debe incluir `.env` y `node_modules` para evitar subir información sensible y archivos innecesarios al repositorio.
